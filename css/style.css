@@ -1,0 +1,675 @@
+
+/* ====== CONFIGURAÇÃO GERAL ====== */
+
+body {
+  margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ====== CABEÇALHO ====== */
+
+header {
+  background: transparent;
+  color: rgb(0, 0, 0);
+  padding: 1rem 1rem 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+/* Container com logo + título */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0;
+  text-align: center;
+}
+
+/* Imagem de fundo do cabeçalho (classes separada) */
+.cabecalho-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; 
+  pointer-events: none; 
+}
+
+.logo-container,
+nav {
+  position: relative;
+  z-index: 5;
+}
+
+.logo-container h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+/* Logo maior no desktop e menor no mobile */
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    height: 60px;
+  }
+}
+
+/* ====== NAVEGAÇÃO ====== */
+
+nav {
+  position: relative;
+  z-index: 15;
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  overflow: visible;
+  position: relative;
+}
+
+nav a {
+  color: #c6a179;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* ====== LINK DECORADO COM VINHA ====== */
+
+.link-vinha {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #c6a179;
+  font-weight: bold;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+  z-index: 20;
+}
+
+.link-vinha:hover {
+  color: #b88b5c;
+}
+
+.vinha-img {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  max-width: 250px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 25;
+}
+
+.link-vinha:hover .vinha-img {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
+
+/* Página Sobre */
+.pagina-sobre {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  font-family: 'Georgia', serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+.sobre-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.texto-sobre {
+  flex: 1 1 500px;
+}
+
+.texto-sobre h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.6em;
+  color: #a0522d;
+  margin-bottom: 10px;
+}
+
+.texto-sobre .subtitulo {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.imagem-sobre {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.imagem-sobre img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* Seção de valores */
+.valores {
+  text-align: center;
+}
+
+.valores h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2em;
+  color: #a0522d;
+  margin-bottom: 40px;
+}
+
+.grid-valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.valor {
+  background: #fffdf8;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.valor:hover {
+  transform: translateY(-5px);
+}
+
+.valor img {
+  width: 250px;
+  margin-bottom: 15px;
+}
+
+.valor h4 {
+  color: #6b3d1f;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+
+/* Página Setembros de Papel */
+.pagina-projeto-exclusivo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+}
+
+.intro-projeto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.intro-texto {
+  flex: 1 1 400px;
+}
+
+.intro-texto h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8em;
+  color: #a0522d;
+  margin-bottom: 10px;
+}
+
+.intro-texto .subtitulo {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.intro-imagem {
+  flex: 1 1 300px;
+}
+
+.intro-imagem img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.amarelo { color: #f5b800; font-weight: bold; }
+.azul { color: #0077cc; font-weight: bold; }
+.roxo { color: #7d4ac7; font-weight: bold; }
+
+.galeria-projeto {
+  text-align: center;
+}
+
+.galeria-projeto h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.descricao-galeria {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.03);
+}
+
+.encerramento {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.encerramento h3 {
+  font-size: 1.6em;
+  color: #a0522d;
+  margin-bottom: 15px;
+}
+
+
+/* ====== BANNER ====== */
+
+.banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.banner {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  background-image: url("../img/3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgb(74, 99, 70);
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0px;
+  animation: fadeSlideIn 1.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ====== SEÇÃO DE LIVROS ====== */
+
+.livros {
+  font-size: 15px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.status {
+  display: inline-block; /* mantém o botão pequeno */
+  padding: 10px 20px;
+  background-color: #d9b8b8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: darksalmon;
+  background-color: bisque;
+}
+
+.status a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  
+}
+
+.status:hover {
+  transform: scale(1.02);
+  text-decoration: none;
+}
+
+.livro {
+  flex: 1 1 150px;
+  max-width: 300px;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.livro:hover {
+  transform: scale(1.02);
+}
+
+.livro img {
+  width: 100%;
+  border-radius: 4px;
+  image-rendering: auto;
+}
+
+/* ====== ACESSO BROTINHOS ====== */
+
+.pagina-livro {
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+  font-family: "Georgia", serif;
+}
+
+.livro-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.livro-imagem img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.livro-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.titulo-livro {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8em;
+  color: #a05252;
+}
+
+.subtitulo-livro {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.sinopse {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.botao-download {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #a05252;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.botao-download:hover {
+  background-color: #8a4040;
+}
+
+.tabela-detalhes {
+  margin-top: 25px;
+  border-collapse: collapse;
+}
+
+.tabela-detalhes td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sobre-projeto {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.sobre-projeto h3 {
+  color: #a05252;
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+}
+
+
+/* ====== SOBRE ====== */
+
+#sobre {
+  font-size: 15px;
+  padding: 2rem;
+  background-color: #eee;
+  text-align: center;
+}
+
+/* ===== PROJETOS ===== */
+
+.pagina-projeto {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.banner-projeto {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.banner-projeto img {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.texto-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.texto-banner h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5em;
+}
+
+.descricao, .funcionamento, .galeria, .futuro {
+  margin-bottom: 50px;
+}
+
+.etapas {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.etapas li {
+  background-color: #f6f0ec;
+  border-left: 4px solid #d9b8b8;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.imagens {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagens img {
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.projetos {
+  font-size: 15px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.projeto {
+  flex: 1 1 150px;
+  max-width: 300px;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.projeto:hover {
+  transform: scale(1.02);
+}
+
+.projeto a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.projeto img {
+  width: 100%;
+  border-radius: 4px;
+  image-rendering: auto;
+}
+
+/* ====== RODAPÉ ====== */
+
+footer {
+  font-size: 15px;
+  background-color: #222;
+  color: rgb(126, 118, 29);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ====== MEDIA QUERIES (RESPONSIVO) ====== */
+
+@media (max-width: 600px) {
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-container h1 {
+    font-size: 1.6rem;
+  }
+
+  header {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    min-height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    overflow: visible;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .banner {
+    font-size: 1.4em;
+    padding: 2rem 1rem;
+  }
+
+  .livros {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .livro {
+    max-width: 90%;
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  #sobre {
+    font-size: 14px;
+    padding: 1.5rem;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* ====== ANIMAÇÃO PARA O BANNER ====== */
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
