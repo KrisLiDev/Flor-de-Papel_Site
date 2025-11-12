@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setembros de Papel | Flor de Papel</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projeto.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" />
+</head>
+
+<body>
+  
+  <header></header>
+
+  <main class="pagina-projeto-exclusivo">
+    <!-- Seção inicial -->
+    <section class="intro-projeto">
+      <div class="intro-texto">
+        <h2>Setembros de Papel</h2>
+        <p class="subtitulo">Cores, empatia e conscientização em cada página.</p>
+        <p>
+          O projeto <strong>Setembros de Papel</strong> nasceu com o propósito de transformar
+          os meses de conscientização em experiências de sensibilidade, aprendizado e expressão.
+          Em setembro, nossos alunos se envolveram com temas como o 
+          <span class="amarelo">Setembro Amarelo</span> (prevenção ao suicídio),
+          <span class="azul">Setembro Azul</span> (visibilidade surda)
+          e <span class="roxo">Setembro Roxo</span> (empatia e inclusão).
+        </p>
+        <p>
+          Cada cor representou uma emoção, um olhar e uma história compartilhada — mostrando que
+          quando a arte e a educação se unem, o papel floresce em significado.
+        </p>
+      </div>
+
+      <div class="intro-imagem">
+        <img src="img/Setembros_de_Papel.jpg" alt="Cartaz do projeto Setembros de Papel" />
+      </div>
+    </section>
+
+    <!-- Galeria de imagens -->
+    <section class="galeria-projeto">
+      <h3>Galeria do Projeto</h3>
+      <p class="descricao-galeria">Alguns registros das atividades, exposições e produções realizadas durante o projeto.</p>
+
+      <div class="carrossel">
+        <div class="slides">
+          <img src="img/setembro1.jpg" alt="Img 1">
+          <img src="img/setembro2.jpg" alt="Img 2">
+          <img src="img/setembro3.jpg" alt="Img 3">
+          <img src="img/setembro4.jpg" alt="Img 4">
+          <img src="img/setembro5.jpg" alt="Img 5">
+          <img src="img/setembro6.jpg" alt="Img 6">
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+      </div>
+
+      <div id="modal" class="modal">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imgModal">
+      </div>
+    </section>
+
+    <!-- Encerramento -->
+    <section class="encerramento">
+      <h3>Um setembro para florescer</h3>
+      <p>
+        “Setembros de Papel” é mais que um projeto — é um lembrete de que cada voz, gesto e cor
+        têm o poder de transformar.  
+        Seguimos semeando empatia e esperança, uma história de cada vez.
+      </p>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="../js/incluir-componentes.js"></script>
+  <script src="../js/tema-loader.js"></script>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("imgModal");
+    const fechar = document.getElementsByClassName("fechar")[0];
+    const imagens = document.querySelectorAll(".img-expandir");
+
+    imagens.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    fechar.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    modal.onclick = function(e) {
+      if (e.target === modal) modal.style.display = "none";
+    }
+  </script>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const imagensCarrossel = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let contador = 0;
+
+    function mostrarSlide() {
+      if (contador >= imagensCarrossel.length) contador = 0;
+      if (contador < 0) contador = imagensCarrossel.length - 1;
+      slides.style.transform = `translateX(${-contador * 100}%)`;
+    }
+
+    next.addEventListener('click', () => {
+      contador++;
+      mostrarSlide();
+    });
+
+    prev.addEventListener('click', () => {
+      contador--;
+      mostrarSlide();
+    });
+
+    // Auto-play opcional
+    setInterval(() => {
+      contador++;
+      mostrarSlide();
+    }, 5000);
+  </script>
+  <script src="../js/tema-loader.js"></script>
+</body>
+</html>
