@@ -1,213 +1,217 @@
-
 /* ========================================================== */
-/* == TEMA HALLOWEEN - "SOMBRAS E PÉTALAS" (25/10 a 31/10) == */
+/* == TEMA HALLOWEEN - "SOMBRAS E PÉTALAS" (VERSÃO FINAL) == */
 /* ========================================================== */
 
-/* -- 1. DEFINIÇÃO DAS CORES DO TEMA -- */
-.sombras-e-petalas {
+.tema-sombras-e-petalas {
   --cor-fundo-escuro: #1a1a1a;
   --cor-fundo-vinho: #2a0a2a;
   --cor-card-escuro: #252525;
-  --cor-texto-cinza: #cccccc;
-  --cor-ouro-velho: #B89B70;
+  --cor-texto-cinza: #e0e0e0; /* CLAREADO: Era #cccccc */
+  --cor-ouro-velho: #C9A97C; /* AJUSTADO: Mais claro e brilhante que #B89B70 */
   --cor-vinho-destaque: #611a35;
 }
 
-/* -- 2. MUDANÇAS GLOBAIS (FUNDO E TEXTO) -- */
-
-/* Fundo e cor principal do site (JÁ REVISADO COM overflow-x) */
-.sombras-e-petalas body {
+/* -- GERAL -- */
+body.tema-sombras-e-petalas {
   background-color: var(--cor-fundo-escuro);
   color: var(--cor-texto-cinza);
-  transition: background-color 0.5s ease, color 0.5s ease;
-  overflow-x: hidden; /* CORREÇÃO DA BARRA DE ROLAGEM */
+  padding-top: 0;
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para facilitar leitura */
+  font-weight: 400; /* Garante que a fonte não fique muito fina */
 }
 
-/* Cabeçalho com fundo escuro e cor de título */
-.sombras-e-petalas header {
+/* -- CABEÇALHO -- */
+.tema-sombras-e-petalas .cabecalho-container {
+  display: none !important;
+}
+
+.tema-sombras-e-petalas header {
   background: var(--cor-fundo-vinho);
   color: var(--cor-ouro-velho);
-  /* Sombra sutil para destacar do resto */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  position: relative;
+  border-bottom: 1px solid var(--cor-vinho-destaque);
 }
 
-/* Rodapé */
-.sombras-e-petalas footer {
-  background-color: #111; /* Ainda mais escuro */
-  color: var(--cor-ouro-velho);
-  position: relative; /* Para a abóbora ornamental */
+/* --- LOGO --- */
+.tema-sombras-e-petalas .logo {
+  content: url('../img/Halloween_Logo.png'); 
+  max-height: 80px; 
+  width: auto;
+  filter: drop-shadow(0 0 5px rgba(255, 165, 0, 0.5));
 }
 
-/* Seção "Sobre" (que era #eee) */
-.sombras-e-petalas #sobre {
-  background-color: #202020;
-}
-
-/* -- 3. TEXTOS, TÍTULOS E LINKS -- */
-
-/* Título principal no cabeçalho */
-.sombras-e-petalas .logo-container h1 {
-  color: #ffffff; /* Dourado pode ficar apagado, branco dá mais contraste */
-}
-
-/* Links da Navegação */
-.sombras-e-petalas nav a,
-.sombras-e-petalas .link-vinha {
-  color: var(--cor-ouro-velho);
-}
-.sombras-e-petalas nav a:hover,
-.sombras-e-petalas .link-vinha:hover {
+.tema-sombras-e-petalas .logo-container h1 {
   color: #fff;
+  text-shadow: 0 0 10px rgba(184, 155, 112, 0.5);
+  letter-spacing: 0.5px;
+  /* REMOVIDO: font-family: 'Cinzel', serif; - Mantém a fonte original */
 }
 
-/* Títulos das páginas (que eram marrons/sienna) */
-.sombras-e-petalas .texto-sobre h2,
-.sombras-e-petalas .valores h3,
-.sombras-e-petalas .intro-texto h2,
-.sombras-e-petalas .titulo-livro,
-.sombras-e-petalas .sobre-projeto h3,
-.sombras-e-petalas .texto-banner h1,
-.sombras-e-petalas .encerramento h3,
-.sombras-e-petalas .galeria-projeto h3 {
-  color: var(--cor-ouro-velho);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Títulos dos cards */
-.sombras-e-petalas .valor h4 {
-  color: var(--cor-texto-cinza);
-}
-
-/* Subtítulos (que eram cinza escuro) */
-.sombras-e-petalas .texto-sobre .subtitulo,
-.sombras-e-petalas .intro-texto .subtitulo,
-.sombras-e-petalas .subtitulo-livro,
-.sombras-e-petalas .descricao-galeria {
-  color: var(--cor-texto-cinza);
-  opacity: 0.8;
-}
-
-/* -- 4. ELEMENTOS DE PÁGINA (CARDS, BOTÕES, BANNERS) -- */
-
-/* Banner principal (REVISADO para .jpg) */
-.sombras-e-petalas .banner {
-  background-image: url('../img/banner-sombras-e-petalas.jpg'); /* <-- MUDANÇA CRÍTICA */
-  color: var(--cor-ouro-velho);
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* Cards (Livros, Projetos, Valores) */
-.sombras-e-petalas .livro,
-.sombras-e-petalas .projeto,
-.sombras-e-petalas .valor {
-  background: var(--cor-card-escuro);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Efeito de vidro sutil */
-}
-
-/* Botões */
-.sombras-e-petalas .status {
-  background-color: var(--cor-vinho-destaque);
-  color: var(--cor-ouro-velho);
-}
-
-.sombras-e-petalas .botao-download {
-  background-color: var(--cor-ouro-velho);
-  color: var(--cor-fundo-escuro);
-  font-weight: bold;
-}
-.sombras-e-petalas .botao-download:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Tabela na página do livro */
-.sombras-e-petalas .tabela-detalhes td {
-  border-bottom: 1px solid #444;
-}
-
-/* -- 5. EXTRAS TEMÁTICOS (ABÓBORAS, TEIAS, PÉTALAS) -- */
-
-/* Teia discreta no cabeçalho */
-.sombras-e-petalas header::before {
+/* Teia no Header */
+.tema-sombras-e-petalas header::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 120px;
-  height: 120px;
+  top: 0; right: 0; width: 180px; height: 180px;
   background-image: url('../img/teia-canto.png'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.2; /* Bem sutil */
-  pointer-events: none; /* Para não atrapalhar os links */
+  background-size: contain; background-repeat: no-repeat;
+  opacity: 0.3; pointer-events: none;
 }
 
-/* Abóbora ornamental no rodapé */
-.sombras-e-petalas footer::after {
-  content: '';
-  position: absolute;
-  bottom: 5px;
-  left: 15px;
-  width: 60px;
-  height: 60px;
+/* -- BANNER -- */
+.tema-sombras-e-petalas #destaque,
+.tema-sombras-e-petalas .banner,
+.tema-sombras-e-petalas section.banner {
+  background: #2a0a2a url('../img/banner-sombras-e-petalas.png') no-repeat center center / cover !important;
+  color: var(--cor-ouro-velho) !important;
+  text-shadow: 0 2px 4px #000; /* Sombra mais forte para leitura no banner */
+  min-height: 300px;
+  border-bottom: 3px solid var(--cor-vinho-destaque);
+}
+
+/* -- LINKS E NAVEGAÇÃO -- */
+.tema-sombras-e-petalas nav a, 
+.tema-sombras-e-petalas .link-vinha { 
+  color: var(--cor-ouro-velho); 
+  font-weight: 600; 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8); 
+  /* Fonte revertida para o padrão */
+}
+
+/* -- RODAPÉ -- */
+.tema-sombras-e-petalas footer { 
+  background-color: #0f0f0f; 
+  color: #bbb; /* Texto do rodapé um pouco mais claro */
+  position: relative; 
+}
+body.tema-sombras-e-petalas > footer::after {
+  content: ''; position: absolute; bottom: 5px; left: 15px; width: 70px; height: 70px;
   background-image: url('../img/abobora-ornamental.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.7;
+  background-size: contain; background-repeat: no-repeat; opacity: 0.9;
 }
 
-/* Animação de Pétalas Caindo (JÁ REVISADA) */
-.sombras-e-petalas .petalas-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; /* CORREÇÃO DA BARRA DE ROLAGEM */
-  width: 100%; 
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  overflow: hidden; /* CORREÇÃO DA BARRA DE ROLAGEM */
+/* -- SEÇÕES E CARDS -- */
+.tema-sombras-e-petalas #sobre,
+.tema-sombras-e-petalas .intro-projeto { 
+  background-color: #202020; 
 }
 
-.sombras-e-petalas .petala {
-  position: absolute;
-  top: -20px;
-  width: 15px;
-  height: 15px;
-  background-image: url('../img/petala-vinho.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0;
-  animation: animacao-petala 12s linear infinite;
+/* Melhoria geral de Subtítulos */
+.tema-sombras-e-petalas .subtitulo,
+.tema-sombras-e-petalas p.subtitulo {
+  color: #dcdcdc !important; /* Cinza bem claro */
+  font-weight: 400;
 }
 
-/* Gera múltiplas pétalas com delays e posições diferentes */
-.sombras-e-petalas .petala:nth-child(1) { left: 10%; animation-delay: 0s; }
-.sombras-e-petalas .petala:nth-child(2) { left: 20%; animation-delay: -5s; animation-duration: 10s;}
-.sombras-e-petalas .petala:nth-child(3) { left: 30%; animation-delay: -3s; }
-.sombras-e-petalas .petala:nth-child(4) { left: 40%; animation-delay: -7s; animation-duration: 11s;}
-.sombras-e-petalas .petala:nth-child(5) { left: 50%; animation-delay: -1s; }
-.sombras-e-petalas .petala:nth-child(6) { left: 60%; animation-delay: -8s; }
-.sombras-e-petalas .petala:nth-child(7) { left: 70%; animation-delay: -2s; animation-duration: 13s;}
-.sombras-e-petalas .petala:nth-child(8) { left: 80%; animation-delay: -6s; }
-.sombras-e-petalas .petala:nth-child(9) { left: 90%; animation-delay: -4s; }
+.tema-sombras-e-petalas .livro,
+.tema-sombras-e-petalas .projeto,
+.tema-sombras-e-petalas .valor {
+  background: var(--cor-card-escuro);
+  border: 1px solid #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
 
+/* CONTRASTE MÁXIMO EM CARDS */
+.tema-sombras-e-petalas .livro p,
+.tema-sombras-e-petalas .projeto p,
+.tema-sombras-e-petalas .valor p,
+.tema-sombras-e-petalas .texto-sobre p, 
+.tema-sombras-e-petalas .intro-texto p {
+  color: #ffffff; /* Branco puro */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8); /* Sombra preta atrás do texto */
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Títulos Dourados */
+.tema-sombras-e-petalas h1,
+.tema-sombras-e-petalas h2,
+.tema-sombras-e-petalas h3,
+.tema-sombras-e-petalas h4 { 
+  color: var(--cor-ouro-velho) !important; 
+  letter-spacing: 0.5px;
+  /* REMOVIDO: font-family: 'Cinzel', serif; - Mantém a fonte original */
+}
+
+.tema-sombras-e-petalas .status { background-color: var(--cor-vinho-destaque); color: #fff; }
+.tema-sombras-e-petalas .botao-download { background-color: var(--cor-ouro-velho); color: #000; font-weight: 800; }
+.tema-sombras-e-petalas .tabela-detalhes td { border-bottom: 1px solid #444; color: #ddd; }
+
+/* -- PÁGINA DO LIVRO (ACESSOBROTINHOS & PROJETOS GERAIS) -- */
+
+/* Força o fundo escuro na página do livro e nas seções dos projetos */
+.tema-sombras-e-petalas .pagina-livro,
+.tema-sombras-e-petalas .pagina-projeto,
+.tema-sombras-e-petalas .descricao,
+.tema-sombras-e-petalas .funcionamento,
+.tema-sombras-e-petalas .galeria,
+.tema-sombras-e-petalas .futuro {
+  background-color: var(--cor-fundo-escuro) !important; /* Garante que não fique branco */
+  color: var(--cor-texto-cinza) !important;
+}
+
+.tema-sombras-e-petalas .titulo-livro {
+  color: var(--cor-ouro-velho) !important;
+  text-shadow: 0 2px 4px #000;
+  /* REMOVIDO: font-family: 'Cinzel', serif; */
+}
+
+.tema-sombras-e-petalas .subtitulo-livro {
+  color: #ddd !important;
+}
+
+.tema-sombras-e-petalas .autor-livro {
+  color: var(--cor-texto-cinza) !important;
+}
+
+.tema-sombras-e-petalas .sinopse {
+  background-color: rgba(255, 255, 255, 0.05); /* Caixa levemente destacada */
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  color: #fff !important; /* Força cor branca */
+}
+
+.tema-sombras-e-petalas .sobre-projeto {
+  background-color: #202020; /* Fundo escuro igual ao 'sobre' da home */
+  border-top: 1px solid var(--cor-vinho-destaque);
+  color: var(--cor-texto-cinza);
+}
+
+.tema-sombras-e-petalas .sobre-projeto h3 {
+  color: var(--cor-ouro-velho) !important;
+}
+
+.tema-sombras-e-petalas .tabela-detalhes td strong {
+  color: var(--cor-ouro-velho);
+}
+
+/* CORREÇÃO DOS CARDS DE FUNCIONAMENTO (Itens da lista na página Brotinhos) */
+.tema-sombras-e-petalas .etapas li {
+  background-color: var(--cor-card-escuro) !important; /* Sobrescreve o branco */
+  color: #e0e0e0;
+  border: 1px solid #444;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Adiciona sombra suave */
+}
+
+.tema-sombras-e-petalas .etapas strong {
+  color: var(--cor-ouro-velho); /* Destaque dourado para o título do card */
+}
+
+
+/* -- PÉTALAS -- */
+.tema-sombras-e-petalas .petalas-container {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 9999; overflow: hidden;
+}
+.tema-sombras-e-petalas .petala {
+  position: absolute; top: -50px; width: 20px; height: 20px;
+  background-image: url('../img/petala-vinho.png'); 
+  background-size: contain; background-repeat: no-repeat; opacity: 0;
+  animation: animacao-petala linear infinite;
+}
 @keyframes animacao-petala {
-  0% {
-    top: -5%;
-    transform: rotate(0deg) rotateX(-20deg);
-    opacity: 0;
-  }
-  10% {
-     opacity: 0.9;
-  }
-  90% {
-     opacity: 0.9;
-  }
-  100% {
-    top: 105%;
-    transform: rotate(360deg) rotateX(60deg);
-    opacity: 0;
-  }
+  0% { top: -10%; transform: rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; } 90% { opacity: 0.8; }
+  100% { top: 110%; transform: rotate(360deg); opacity: 0; }
 }
