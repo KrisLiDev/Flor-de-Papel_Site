@@ -3,7 +3,7 @@
   const TEMAS = [
     { id: 'padrao', nome: 'Padrão (Claro)', icone: '☀️' },
     { id: 'sombras-e-petalas', nome: 'Sombras e Pétalas', icone: '🥀' },
-    { id: 'festas', nome: 'Boas Festas', icone: '🎄' }
+    //{ id: 'festas', nome: 'Boas Festas', icone: '🎄' }
   ];
 
   // Função para identificar o tema baseado na data
@@ -137,4 +137,5 @@
   } else {
     carregarGerenciadorDeTemas();
   }
+
 })();
