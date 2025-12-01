@@ -1,0 +1,206 @@
+/* ========================================================== */
+/* == TEMA DE NATAL - "SONHOS DE NEVE" (15/12 a 07/01) == */
+/* ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.tema-flocos-e-sonhos {
+  --cor-fundo-site: #0b1026; /* Azul Noite Profunda */
+  --cor-fundo-card: #151b33;
+  --cor-texto-principal: #e0e0e0; /* Branco Gelo Suave */
+  --cor-destaque-vermelho: #c41e3a; /* Vermelho Natal */
+  --cor-destaque-dourado: #ffd700; /* Dourado */
+  --cor-destaque-verde: #071452; /* Verde Pinheiro */
+}
+
+/* -- GERAL -- */
+body.tema-flocos-e-sonhos {
+  background-color: var(--cor-fundo-site);
+  color: var(--cor-texto-principal);
+  padding-top: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.tema-flocos-e-sonhos .livro p,
+.tema-flocos-e-sonhos .projeto p,
+.tema-flocos-e-sonhos .valor p {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* -- CABEÇALHO -- */
+.tema-flocos-e-sonhos .cabecalho-container {
+  display: none !important;
+}
+
+.tema-flocos-e-sonhos header .logo-container {
+  background: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.tema-flocos-e-sonhos .logo {
+  content: url('../img/Natal_Logo.png');
+  max-height: 80px;
+  width: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.tema-flocos-e-sonhos header {
+  background: linear-gradient(135deg, var(--cor-destaque-verde), #0f2b1d);
+  border-bottom: 1px solid var(--cor-destaque-dourado);
+  padding-top: 10px;
+  position: relative;
+  text-align: center;
+}
+
+/* Remove conflitos com o header original */
+body.tema-flocos-e-sonhos .logo img {
+  max-height: 80px !important;
+  width: auto !important;
+}
+
+body.tema-flocos-e-sonhos .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: none !important;
+  text-decoration: none !important;
+}
+
+
+/* Fio de Luzes no topo */
+.tema-flocos-e-sonhos header::before {
+  content: '';
+  position: absolute; top: 0; left: 0; width: 100%; height: 6px;
+  background: repeating-linear-gradient(90deg, #ff0000, #ff0000 10px, #00ff00 10px, #00ff00 20px, #ffd700 20px, #ffd700 30px);
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+  z-index: 10;
+}
+
+/* --- LOGO --- */
+.tema-flocos-e-sonhos .logo {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));
+}
+
+.tema-flocos-e-sonhos .logo-container h1 {
+  color: #fff;
+  text-shadow: 0 0 10px var(--cor-destaque-vermelho);
+  font-family: 'Mountains of Christmas', cursive, sans-serif;
+}
+
+/* -- BANNER -- */
+.tema-flocos-e-sonhos #destaque,
+.tema-flocos-e-sonhos .banner,
+.tema-flocos-e-sonhos section.banner {
+  /* Se não tiver banner-festas.png, ficará vermelho */
+  background: var(--cor-destaque-vermelho) url('../img/Banner_Natal.png') no-repeat center center / cover !important;
+  color: #fff !important;
+  text-shadow: 0 2px 4px #000;
+  border-bottom: 4px solid var(--cor-destaque-dourado);
+  min-height: 300px;
+}
+
+/* -- LINKS E NAVEGAÇÃO -- */
+.tema-flocos-e-sonhos nav a, .tema-flocos-e-sonhos .link-vinha { color: var(--cor-destaque-dourado); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
+.tema-flocos-e-sonhos nav a:hover { color: #fff; text-shadow: 0 0 10px #fff; }
+
+/* -- RODAPÉ -- */
+.tema-flocos-e-sonhos footer { 
+  background-color: #080c1c; 
+  color: #aaa; 
+  border-top: 1px solid var(--cor-destaque-verde);
+  position: relative;
+}
+
+/* --- ESTRELA NO RODAPÉ --- */
+body.tema-flocos-e-sonhos > footer::after {
+  content: ''; 
+  position: absolute; 
+  bottom: 10px; 
+  left: 15px; 
+  width: 60px; 
+  height: 60px;
+  background-image: url('../img/estrela.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+  z-index: 5;
+}
+
+/* -- SEÇÕES E CARDS -- */
+.tema-flocos-e-sonhos #sobre, .tema-flocos-e-sonhos .intro-projeto, .tema-flocos-e-sonhos .sobre-projeto { background-color: #12182b; }
+
+.tema-flocos-e-sonhos .livro, .tema-flocos-e-sonhos .projeto, .tema-flocos-e-sonhos .valor {
+  background: var(--cor-fundo-card); border: 1px solid var(--cor-destaque-verde); box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+.tema-flocos-e-sonhos .livro p, .tema-flocos-e-sonhos .projeto p, .tema-flocos-e-sonhos .valor p { color: #e0e0e0; }
+
+.tema-flocos-e-sonhos h1, .tema-flocos-e-sonhos h2, .tema-flocos-e-sonhos h3 { color: var(--cor-destaque-dourado) !important; font-family: 'Mountains of Christmas', cursive; }
+
+.tema-flocos-e-sonhos .status { background-color: var(--cor-destaque-verde); color: #fff; border: 1px solid var(--cor-destaque-dourado); }
+.tema-flocos-e-sonhos .botao-download { background-color: var(--cor-destaque-vermelho); color: #fff; font-weight: bold; border: 2px solid #fff; }
+
+/* -- PÁGINAS INTERNAS -- */
+.tema-flocos-e-sonhos .pagina-livro, .tema-flocos-e-sonhos .pagina-projeto, .tema-flocos-e-sonhos .descricao, .tema-flocos-e-sonhos .funcionamento, .tema-flocos-e-sonhos .galeria, .tema-flocos-e-sonhos .futuro, .tema-flocos-e-sonhos .sinopse {
+  background-color: var(--cor-fundo-site) !important; color: var(--cor-texto-principal) !important;
+}
+.tema-flocos-e-sonhos .etapas li { background-color: var(--cor-fundo-card) !important; border: 1px solid var(--cor-destaque-vermelho); color: #fff; }
+.tema-flocos-e-sonhos .etapas strong { color: var(--cor-destaque-dourado); }
+
+/* -- ANIMAÇÃO DE NEVE -- */
+.tema-flocos-e-sonhos .neve-container {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden;
+}
+.tema-flocos-e-sonhos .floco {
+  position: absolute; top: -50px; width: 20px; height: 20px;
+  background-size: contain; background-repeat: no-repeat; opacity: 0;
+  animation: cair-neve linear infinite;
+}
+
+/* -- ANIMAÇÃO DE NEVE -- */
+/* O container precisa ignorar cliques (pointer-events: none) para não atrapalhar a navegação */
+.neve-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.floco {
+  position: absolute;
+  top: -50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  animation-name: cair-neve;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* IMPORTANTE: Keyframes devem ficar na raiz do arquivo CSS, fora de qualquer classe */
+@keyframes cair-neve {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.7;
+  }
+}
